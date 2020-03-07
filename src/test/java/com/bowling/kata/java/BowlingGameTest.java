@@ -19,15 +19,26 @@ public class BowlingGameTest {
     }
   }
   
+  private void rollSpare() {
+    rollMany(2, 5);
+  }
+  
   @Test
   public void testGutterGame() {
     rollMany(20, 0);
-    assertEquals(g.getScore(), 0);
+    assertEquals(0, g.getScore());
   }
   
   @Test
   public void testAllOnes() {
     rollMany(20, 1);
-    assertEquals(g.getScore(), 20);
+    assertEquals(20, g.getScore());
+  }
+  
+  @Test
+  public void testOneSpare() {
+    rollSpare();
+    g.roll(3);
+    assertEquals(16, g.getScore());
   }
 }
