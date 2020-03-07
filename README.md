@@ -18,7 +18,6 @@ brew install maven
 
 Setup project
 ```bash
-cd com.bowling.kata.java 
 mvn install
 ```
 ### Testing
